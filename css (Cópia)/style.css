@@ -1,0 +1,89 @@
+:root {
+    --primary-color: #4CAF50; /* Um verde semelhante ao da imagem */
+    --secondary-color: #66BB6A;
+    --background-color: #f4f7f6; /* Cor de fundo geral */
+    --card-background: #ffffff;
+    --text-color-dark: #333333;
+    --text-color-light: #666666;
+    --border-color: #e0e0e0;
+    --sidebar-bg: #ffffff;
+    --sidebar-text: #555555;
+    --sidebar-active-bg: #e8f5e9; /* Um verde muito claro */
+    --sidebar-active-text: #4CAF50;
+    --chart-bar-color: #7CB342; /* Verde das barras */
+    --chart-pie-green: #81C784; /* Verde da pizza */
+    --chart-pie-orange: #FFB74D; /* Laranja da pizza */
+    --chart-pie-blue: #4DB6AC; /* Azul da pizza */
+    --input-border: #cccccc;
+    --input-focus-border: #4CAF50;
+    --btn-primary-bg: #4CAF50;
+    --btn-primary-text: #ffffff;
+    --btn-primary-hover-bg: #45a049;
+    --btn-secondary-bg: #e0e0e0;
+    --btn-secondary-text: #333333;
+    --btn-secondary-hover-bg: #d0d0d0;
+    --table-header-bg: #f5f5f5;
+    --table-border: #e0e0e0;
+    --row-hover-bg: #f9f9f9;
+    --view-btn-bg: transparent; /* Fundo transparente para o "Ver >" */
+    --view-btn-text: #666666;
+    --view-btn-hover-text: #4CAF50; /* Cor ao passar o mouse */
+        --info-color: #3182ce; /* Azul para editar */
+    --info-hover-color: #2b6cb0;
+    --danger-color: #e53e3e; /* Vermelho para excluir */
+    --danger-hover-color: #c53030;
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color-dark);
+    line-height: 1.6;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    gap: 15px;
+    min-height: 100vh;
+}
+
+/* Content Area Styling */
+.content-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1; /* Permite que a área de conteúdo ocupe o espaço restante */
+}
+
+.side {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin: 0 auto;
+}
+/* --- :root (Variáveis de Cores e Fontes Utilizadas no Formulário) --- */
+:root {
+    --primary-color: #4CAF50;
+    --btn-primary-bg: #4CAF50;
+    --btn-primary-text: #ffffff;
+    --btn-primary-hover-bg: #45a049;
+    --btn-secondary-bg: #e0e0e0;
+    --btn-secondary-text: #333333;
+    --btn-secondary-hover-bg: #d0d0d0;
+    --text-color-dark: #333333;
+    --text-color-light: #666666;
+    --border-color: #e0e0e0;
+    --input-border: #cccccc;
+    --danger-color: #e53e3e; /* Para o '*' de campo obrigatório */
+    --primary-rgb: 76, 175, 80; /* Usado no efeito de 'focus' dos inputs */
+}
+

@@ -1,0 +1,72 @@
+<div class="header">
+    <h1>Gestão de Criação de Animais</h1>
+    <p>Cadastre, consulte e gerencie as criações.</p>
+</div>
+
+<div class="list-container">
+    <?= $this->Form->hidden('_csrfToken'); ?>
+
+    <div class="filter-section">
+        <?= $this->Html->link('+ Adicionar', ['action' => 'add'], ['class' => 'btn btn-new-producer']) ?>
+
+        <div class="specific-filter-container">
+            <div class="input-filter">
+                <input type="text" id="specificSearchInput" class="form-control" placeholder="Filtrar por...">
+                <div class="input-group-append">
+                    <button class="btn btn-secondary" type="button" id="clearSpecificFilterBtn">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="radio-group horizontal" id="filterColumnSelector">
+                <label class="radio-inline"><input type="radio" name="filterColumn" value="0" data-search-type="nome" checked> Produtor</label>
+                <label class="radio-inline"><input type="radio" name="filterColumn" value="1" data-search-type="cpf"> CPF</label>
+                <label class="radio-inline"><input type="radio" name="filterColumn" value="2" data-search-type="uppercase-text"> Espécie</label>
+                <label class="radio-inline"><input type="radio" name="filterColumn" value="3" data-search-type="uppercase-text"> Finalidade</label>
+                <label class="radio-inline"><input type="radio" name="filterColumn" value="4" data-search-type="uppercase-text"> Raça</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+    <table id="criacoesAnimaisTable" class="display responsive nowrap">
+        <thead>
+            <tr>
+                <th class="hidden-column">nome</th>
+                <th class="hidden-column">cpf</th>
+                <th>Espécie</th>
+                <th>Quantidade</th>
+                <th>Finalidade</th>
+                <th>Raça</th>
+                <th class="actions">Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($criacoes as $criacao): ?>
+                <tr>
+                    <td class="hidden-column"><?= h($criacao->produtore ? $criacao->produtore->nome : 'N/A') ?></td>
+                    <td class="hidden-column"><?= h($criacao->produtore ? $criacao->produtore->cpf : 'N/A') ?></td>
+                    <td><?= h($criacao->especie) ?></td>
+                    <td><?= h($criacao->quantidade.' '.$criacao->unidade.'(s)') ?></td>
+                    <td><?= h($criacao->finalidade) ?></td>
+                    <td><?= h($criacao->raca) ?></td>
+                    <td class="actions">
+                        <?= $this->Html->link('<i class="fas fa-edit"></i>', ['action' => 'edit', $criacao->id], ['class' => 'btn btn-action btn-edit', 'title' => 'Editar Criação', 'escape' => false]) ?>
+                        <?= $this->Html->link(
+                            '<i class="fas fa-trash"></i>',
+                            '#',
+                            ['class' => 'btn btn-action btn-delete js-delete-criacao-link', 'title' => 'Excluir Criação', 'escape' => false, 'data-criacao-id' => $criacao->id, 'data-url' => $this->Url->build(['action' => 'delete', $criacao->id])]
+                        ) ?>
+                        <?= $this->Form->create(null, ['url' => ['action' => 'delete', $criacao->id], 'id' => 'delete-form-' . $criacao->id, 'class' => 'hidden']) ?>
+                        <?= $this->Form->hidden('_method', ['value' => 'DELETE']) ?>
+                        <?= $this->Form->end() ?>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+</div>
+<?php $this->append(name: 'script'); ?>
+<?= $this->Html->script('common_datatable'); ?>
+<?= $this->Html->script('criacoes-animais'); ?>
+<?php $this->end(); ?>

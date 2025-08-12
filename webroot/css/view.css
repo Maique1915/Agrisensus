@@ -1,0 +1,234 @@
+/* --- :root (Variáveis de Cores e Fontes) --- */
+:root {
+    --page-bg-color: #f7f7f3;
+    --card-bg-color: #ffffff;
+    --info-card-bg: #fdfdfd;
+    --text-block-bg: #f8f9fa;
+    --primary-color: #50cc56;
+    --text-color-dark: #333333;
+    --text-color-light: #777777;
+    --border-color: #e8e8e3;
+    --btn-secondary-bg: #f0f0f0;
+    --btn-secondary-text: #555;
+    --btn-secondary-hover-bg: #e0e0e0;
+}
+
+/* --- Layout Principal da Página --- */
+.produtores-content {
+    padding: 20px 30px;
+    background-color: var(--page-bg-color);
+}
+
+.produtores-header {
+    margin-bottom: 30px;
+}
+
+.produtores-header h1 {
+    font-size: 2.2em;
+    color: var(--text-color-dark);
+    margin-bottom: 5px;
+}
+
+.produtores-header p {
+    font-size: 1.1em;
+    color: var(--text-color-light);
+}
+
+/* --- Estilo Principal dos Cards de Detalhes --- */
+.details-card {
+    background-color: var(--card-bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.card-title {
+    font-size: 1.5em;
+    font-weight: 600;
+    color: var(--text-color-dark);
+    margin: 0 0 20px 0;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* --- Grid para Dados Simples (ex: CPF, CNPJ, Telefone) --- */
+.details-grid {
+    display: grid;
+    /* Cria colunas responsivas, cada uma com no mínimo 250px */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px 25px; /* Espaçamento vertical e horizontal */
+}
+
+.details-grid div {
+    font-size: 1.05em;
+}
+
+.details-grid strong {
+    color: var(--text-color-light);
+    margin-right: 8px;
+}
+
+/* --- Grid para Cards Internos (ex: Propriedades, Cultivos) --- */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.info-card {
+    background-color: var(--info-card-bg);
+    border: 1px solid #f0f0f0;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.info-card-title {
+    font-size: 1.2em;
+    font-weight: 600;
+    margin: 0 0 15px 0;
+    color: var(--primary-color);
+}
+
+.info-card p {
+    margin: 8px 0;
+    font-size: 1em;
+    color: var(--text-color-dark);
+}
+
+.info-card p strong {
+    color: var(--text-color-light);
+}
+
+/* --- Estilos para Listas e Blocos de Texto --- */
+.details-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.details-list li {
+    padding: 10px;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 1.05em;
+}
+.details-list li:last-child {
+    border-bottom: none;
+}
+
+.details-text-block {
+    margin-top: 20px;
+}
+
+.details-text-block strong {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-color-dark);
+}
+
+.details-text-block p {
+    margin: 0;
+    padding: 15px;
+    background-color: var(--text-block-bg);
+    border-radius: 8px;
+    white-space: pre-wrap; /* Preserva quebras de linha e espaços */
+    line-height: 1.6;
+}
+
+/* --- Botões de Ação --- */
+.form-actions-details {
+    margin-top: 30px;
+    text-align: right;
+}
+
+
+
+.btn i {
+    margin-right: 8px;
+}
+
+.btn-secondary {
+    background-color: var(--btn-secondary-bg);
+    color: var(--btn-secondary-text);
+    border-color: #ddd;
+}
+.btn-secondary:hover {
+    background-color: var(--btn-secondary-hover-bg);
+}
+
+/* Adicione isso ao seu CSS principal */
+.info-card .address-block {
+    background-color: #f8f9fa; /* Um fundo levemente diferente */
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: -5px; /* Aproxima do rótulo "Endereço" */
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+
+
+
+
+
+/* --- Estilos para os Botões de Ação nos Cards --- */
+
+/* Cria um container flex para o título e os botões */
+.card-header-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Alinha no topo */
+    margin-bottom: 15px;
+    border-bottom: 1px solid #e8e8e3;
+    padding-bottom: 15px;
+}
+
+/* Garante que o título não tenha margem extra */
+.card-header-actions .card-title,
+.card-header-actions .info-card-title {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+/* Container para os botões de ação */
+.info-card-actions {
+    display: flex;
+    gap: 8px; /* Espaço entre os botões */
+    flex-shrink: 0; /* Impede que os botões encolham */
+    margin-left: 15px;
+}
+
+/* Estilo base para os botões de ícone */
+.btn-action {
+    /* Inherits base styles from .btn-base in style.css */
+    display: inline-block;
+    line-height: 1;
+    color: #999;
+}
+
+.btn-action:hover {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.btn-action.btn-edit:hover { color: var(--btn-edit); } /* Azul */
+.btn-action.btn-delete:hover { color: var(--btn-delete); } /* Vermelho */
+
+
+/* --- Estilo para as listas com ações (Insumos) --- */
+.details-list-actions {
+    list-style: none;
+    padding: 0;
+}
+.details-list-actions li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    border-bottom: 1px solid #e8e8e3;
+}
+.details-list-actions li:last-child {
+    border-bottom: none;
+}

@@ -1,0 +1,99 @@
+    /* --- Estilos da Página de Dashboard --- */
+.dashboard-page .header {
+    margin-bottom: 30px;
+}
+.dashboard-page h2 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 5px;
+}
+.dashboard-page p {
+    font-size: 1.1em;
+    color: #777;
+}
+
+/* --- Container Principal das Abas --- */
+.tabs-container {
+    width: 100%;
+}
+
+/* --- Navegação das Abas --- */
+.tabs-nav {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 -1px 0; /* Negativo para sobrepor a borda */
+    border-bottom: 1px solid #ddd;
+}
+
+.tabs-nav li a {
+    display: block;
+    padding: 12px 20px;
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    border: 1px solid transparent;
+    border-radius: 5px 5px 0 0;
+    transition: all 0.3s ease;
+}
+
+/* Estilo da aba ativa */
+.tabs-nav li a.active {
+    color: #2c5e3f; /* Verde escuro */
+    background-color: #fff;
+    border-color: #ddd;
+    border-bottom-color: #fff;
+}
+
+.tabs-nav li a:not(.active):hover {
+    background-color: #f7f7f7;
+}
+
+/* --- Conteúdo das Abas --- */
+.tabs-content {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-top: none;
+    padding: 30px;
+    border-radius: 0 0 8px 8px;
+    display: grid; /* Adicionado para o efeito de fade */
+}
+
+/* Esconde as abas inativas com efeito de fade e slide */
+.tab-pane {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px); /* Começa um pouco abaixo */
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out, visibility 0.4s;
+    /* Coloca todos os painéis na mesma célula do grid para sobreposição */
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+}
+/* Mostra a aba ativa */
+.tab-pane.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0); /* Sobe para a posição final */
+}
+
+.tab-pane h3 {
+    font-size: 1.6em;
+    margin-top: 0;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+/* --- Grid para organizar os gráficos dentro de cada aba --- */
+.chart-grid {
+    display: grid;
+    /* Duas colunas em telas maiores, uma coluna em telas menores */
+    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+    gap: 30px;
+}
+
+.chart-container {
+    padding: 20px;
+    border: 1px solid #f0f0f0;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}

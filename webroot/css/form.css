@@ -1,0 +1,328 @@
+/* --- :root (Variáveis de Cores e Fontes da Página) --- */
+:root {
+    /* Fundo do card do formulário */
+    --primary-color: #8BC34A;
+    /* Verde principal para botões e foco de inputs */
+    --input-bg-color: #fdfdfd;
+    /* Fundo sutilmente diferente para inputs */
+    --btn-secondary-bg: #f0f0f0;
+    /* Fundo para o botão Cancelar */
+    --btn-secondary-text: #555;
+    --btn-secondary-hover-bg: #e0e0e0;
+}
+
+/* --- Card Principal do Formulário --- */
+
+/* --- Layout e Campos do Formulário --- */
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    /* Espaçamento entre as colunas (ex: Nome e Telefone) */
+    margin-bottom: 25px;
+}
+
+.form-group {
+    flex: 1;
+    /* Permite que os grupos se expandam */
+    margin-bottom: 0;
+    /* Remove margem extra pois o .form-row já tem */
+}
+
+/* Estilo dos Labels (Nome, CPF, etc.) */
+.form-group label {
+    display: block;
+    font-weight: 500;
+    color: var(--text-color-dark);
+    margin-bottom: 8px;
+    font-size: 0.95em;
+}
+
+.required {
+    color: #e53e3e;
+    /* Vermelho para o asterisco */
+}
+
+/* Estilo dos Campos de Input e Select */
+.form-control,
+.select2-container .select2-selection--single {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1em;
+    color: var(--text-color-dark);
+    background-color: var(--input-bg-color);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus,
+.select2-container .select2-selection--single :focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(139, 195, 74, 0.2);
+    /* Efeito de brilho no foco */
+}
+
+.select2-container .select2-selection--single {
+    display: flex;
+    height: 46px;
+    align-items: center;
+}
+
+/* Estilo customizado para o <select> (Relação com a Propriedade) */
+select.form-control {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23666666%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 10px;
+    padding-right: 40px;
+}
+
+/* --- Seção de Botões --- */
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    /* Alinha os botões à direita */
+    gap: 15px;
+    /* Espaçamento entre os botões */
+    margin-top: 40px;
+    padding-top: 25px;
+    border-top: 1px solid var(--border-color);
+    /* Linha divisória sutil */
+}
+
+.btn {
+    /* Inherits base styles from .btn-base in style.css */
+    /* Specific styles for form buttons */
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+    /* Leve efeito de elevação */
+}
+
+/* Botão Salvar (Primário) */
+.btn-primary {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover-color);
+}
+
+/* Botão Cancelar (Secundário) */
+.btn-secondary {
+    background-color: var(--btn-secondary-bg);
+    color: var(--btn-secondary-text);
+}
+
+.btn-secondary:hover {
+    background-color: var(--btn-secondary-hover-bg);
+}
+
+
+
+/* --- :root (Variáveis de Cores e Fontes) --- */
+:root {
+    --page-bg-color: #f7f7f3;
+    --card-bg-color: #ffffff;
+    --primary-color: #8BC34A;
+    --primary-hover-color: #7CB342;
+    --text-color-dark: #333333;
+    --text-color-light: #666666;
+    --border-color: #e8e8e3;
+    --input-bg-color: #fafaf8;
+}
+
+/* --- Estilo da Página e Cabeçalho --- */
+.content-area {
+    background-color: var(--page-bg-color);
+}
+
+
+/* --- Layout do Formulário com Grid --- */
+.perfil-gerencial-form {
+    padding: 0 30px 30px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* Cria um grid de 3 colunas */
+    gap: 20px;
+    /* Espaço entre os cards */
+}
+
+/* --- Estilo dos Cards --- */
+.form-card {
+    background-color: var(--card-bg-color);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    /* Espaço entre os elementos dentro do card */
+}
+
+.form-card h3 {
+    font-size: 1.3em;
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: var(--text-color-dark);
+}
+
+.form-card h4 {
+    font-size: 1em;
+    font-weight: 500;
+    color: var(--text-color-light);
+    margin-bottom: 10px;
+}
+
+/* Modificadores de tamanho para os cards no grid */
+.form-card.full-width {
+    grid-column: 1 / -1;
+}
+
+/* Ocupa a linha toda */
+.form-card.wide {
+    grid-column: span 2;
+}
+
+/* Ocupa duas colunas */
+
+/* --- Estilo dos Campos de Formulário --- */
+.form-card .form-control,
+.form-card select,
+.form-card textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1em;
+    background-color: var(--input-bg-color);
+    transition: all 0.3s ease;
+}
+
+.form-card .form-control:focus,
+.form-card select:focus,
+.form-card textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(139, 195, 74, 0.2);
+}
+
+.form-card label {
+    font-weight: 500;
+    color: var(--text-color-dark);
+    margin-bottom: 8px;
+    display: block;
+}
+
+.form-card textarea {
+    resize: vertical;
+}
+
+/* --- Estilo Customizado dos Checkboxes --- */
+.checkbox-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Checkbox com borda (estilo principal) */
+.checkbox-control {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--input-bg-color);
+    cursor: pointer;
+}
+
+.checkbox-control input[type="checkbox"] {
+    margin-right: 12px;
+    width: 1.2em;
+    height: 1.2em;
+    accent-color: var(--primary-color);
+}
+
+.checkbox-control label {
+    margin: 0;
+    font-weight: normal;
+    color: var(--text-color-dark);
+}
+
+/* Checkbox sem borda (para listas verticais como em "Comercialização") */
+.checkbox-control-vertical {
+    display: flex;
+    align-items: center;
+    padding: 5px 0;
+}
+
+.checkbox-control-vertical input[type="checkbox"] {
+    margin-right: 12px;
+    width: 1.2em;
+    height: 1.2em;
+    accent-color: var(--primary-color);
+}
+
+.checkbox-control-vertical label {
+    margin: 0;
+    font-weight: normal;
+}
+
+
+/* --- Botões de Ação --- */
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 30px;
+    padding-top: 25px;
+    border-top: 1px solid var(--border-color);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover-color);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--text-color-light);
+    border-color: #ccc;
+}
+
+.btn-secondary:hover {
+    background-color: #f0f0f0;
+}
+
+.checkbox-list .input label {
+    display: flex;
+    flex-direction: row;
+    gap: 7px;
+}
+
+
+.form-group .input label {
+    display: flex;
+    flex-direction: row;
+    gap: 7px;
+}
+
+
+label[for='grupo'] {
+    width: 80px;
+}

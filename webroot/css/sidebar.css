@@ -1,0 +1,166 @@
+/* Importação da fonte (opcional, mas recomendado para um visual mais próximo) */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+:root {
+    --sidebar-bg: #f8f9fa; /* Cor de fundo principal da sidebar */
+    --logo-text-color: #50cc56; /* Verde escuro para o logo */
+    --menu-item-text: #555; /* Cor padrão do texto dos itens de menu */
+    --menu-item-hover-bg: #e9ecef; /* Fundo do item ao passar o mouse */
+    --menu-item-active-bg: #e6f3e7; /* Fundo verde claro para o item ativo */
+    --menu-item-active-text: #388e3c; /* Cor do texto e ícone do item ativo */
+    --ia-tools-text: #333; /* Cor para o subtítulo "Ferramentas IA" */
+    --user-profile-text: #333; /* Cor do nome de usuário */
+    --user-email-text: #777; /* Cor do email */
+    --border-color: #e0e0e0; /* Cor para as linhas divisórias */
+    --logout-text: #d32f2f; /* Cor para o texto de logout */
+}
+/* --- Estrutura principal da Sidebar --- */
+.sidebar {
+    display: flex;
+    flex-direction: column; /* Organiza os itens verticalmente */
+    gap: 5px;
+    border-right: 1px solid var(--border-color);
+    width: 300px; /* Largura da sidebar */
+    padding: 15px;
+    background-color: var(--sidebar-bg);
+    height: 100vh; /* Altura total da tela */
+    font-family: 'Roboto', sans-serif;
+    position: fixed;
+}
+
+/* --- Seção do Logo --- */
+.sidebar .logo {
+    padding: 25px 20px;
+    font-size: 1.6em;
+    font-weight: 700;
+    color: var(--logo-text-color);
+    display: flex;
+    align-items: center;
+}
+
+.sidebar .logo .fas {
+    margin-right: 10px;
+}
+
+/* --- Lista de Itens do Menu --- */
+.sidebar .menu-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1; /* Faz esta seção crescer e empurrar o perfil do usuário para baixo */
+}
+
+.sidebar .menu-items li {
+    padding: 5px 0;
+}
+
+.sidebar .menu-items li a {
+    display: flex;
+    align-items: center;
+    padding: 14px 25px;
+    color: var(--menu-item-text);
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 500;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.sidebar .menu-items li a i.fas {
+    margin-right: 15px;
+    width: 20px; /* Garante alinhamento dos textos */
+    text-align: center;
+    font-size: 1.1em;
+}
+
+/* Efeito Hover nos itens */
+.sidebar .menu-items li a:hover {
+    background-color: var(--menu-item-hover-bg);
+}
+
+/* Estilo para o item ATIVO (página atual) */
+/* Você precisará adicionar a classe 'active' ao link da página atual via PHP/JS */
+.sidebar .menu-items li a.active {
+    background-color: var(--menu-item-active-bg);
+    color: var(--menu-item-active-text);
+    border-right: 3px solid var(--menu-item-active-text); /* Borda lateral indicativa */
+    font-weight: 700;
+}
+
+/* Linha divisória e subtítulo "Ferramentas IA" */
+.sidebar .menu-items .menu-header {
+    padding: 20px 25px 10px;
+    font-size: 0.9em;
+    font-weight: 700;
+    color: var(--ia-tools-text);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.sidebar .menu-items hr {
+    border: 0;
+    border-top: 1px solid var(--border-color);
+    margin: 10px 20px;
+}
+
+/* --- Perfil do Usuário na Base da Sidebar --- */
+.user-profile-link {
+    text-decoration: none;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.user-profile:hover {
+    background-color: var(--menu-item-hover-bg);
+}
+
+.user-profile .fas.fa-user {
+    font-size: 2em;
+    color: #ccc;
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    padding: 10px;
+    margin-right: 15px;
+}
+
+.user-profile .user-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-profile .username {
+    font-weight: 700;
+    color: var(--user-profile-text);
+    font-size: 1.1em;
+}
+
+.user-profile .email {
+    font-size: 0.9em;
+    color: var(--user-email-text);
+}
+
+/* --- Seção de Logout (se aplicável) --- */
+.logout-section {
+    padding: 0 20px 20px;
+}
+
+.btn-logout {
+    /* Inherits base styles from .btn-base in style.css */
+    background: none;
+    border: none;
+    color: var(--logout-text);
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.btn-logout:hover {
+    background-color: #fbe9e7; /* Um vermelho bem claro no hover */
+}
+
+.btn-logout i.fas {
+    margin-right: 15px;
+}
